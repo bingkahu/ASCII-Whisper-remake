@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASCII Whisper Web</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/peerjs@1.5.2/dist/peerjs.min.js"></script>
+</head>
+<body>
+
+    <div class="crt-overlay"></div>
+    
+    <div class="container">
+        <header>
+            <h1>ASCII WHISPER // WEB_CLIENT</h1>
+            <div id="status-bar">STATUS: <span id="status">DISCONNECTED</span></div>
+            <div id="id-display">YOUR ID: <span id="my-id">Generating...</span></div>
+        </header>
+
+        <div class="main-interface">
+            <div class="video-section">
+                <div class="feed-box">
+                    <div class="label">LOCAL_FEED</div>
+                    <pre id="local-ascii" class="ascii-feed">NO CAMERA</pre>
+                </div>
+                <div class="feed-box">
+                    <div class="label">REMOTE_FEED</div>
+                    <pre id="remote-ascii" class="ascii-feed">WAITING FOR PEER...</pre>
+                </div>
+            </div>
+
+            <div class="terminal-section">
+                <div id="chat-history" class="chat-history">
+                    <div class="sys-msg">> SYSTEM INITIALIZED...</div>
+                    <div class="sys-msg">> TYPE '/manual' FOR COMMANDS.</div>
+                    <div class="sys-msg">> TYPE '/connect [ID]' TO JOIN A FRIEND.</div>
+                </div>
+                <div class="input-line">
+                    <span class="prompt">user@term:~$</span>
+                    <input type="text" id="chat-input" autocomplete="off" autofocus>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <video id="webcam" autoplay playsinline muted style="display:none;"></video>
+    <script src="script.js"></script>
+</body>
+</html>
